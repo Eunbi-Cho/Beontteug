@@ -9,9 +9,13 @@ import SwiftUI
 import VisionKit
 
 struct ContentView: View {
-    
-    @State private var showScannerSheet = false
+    @State private var showSettingSheet = false
     @EnvironmentObject var vm: AppViewModel
+    @State private var fontSizeValue: Double = 24
+    @State private var lineSpacingValue: Double = 10
+    @State private var charcaterSpacingValue: Double = 0
+    @State private var bgColor = Color.yellow
+    @State private var fontColor = Color.black
     
     private let textContentTypes: [(title: String, textContentType: DataScannerViewController.TextContentType?)] = []
     
@@ -37,15 +41,27 @@ struct ContentView: View {
                     recognizedItems: $vm.recognizedItems,
                     recognizedDataType: vm.recognizedDataType,
                     recognizesMultipleItems: vm.recognizesMultipleItems)
-                .background { Color.black }
+                .background { Color.gray.opacity(0.3) }
                 .ignoresSafeArea()
                 .id(vm.dataScannerViewId)
-                .sheet(isPresented: .constant(true)) {
+                .onChange(of: vm.scanType) { _ in vm.recognizedItems = [] }
+                .onChange(of: vm.textContentType) { _ in vm.recognizedItems = [] }
+                .onChange(of: vm.recognizesMultipleItems) { _ in vm.recognizedItems = []}
+                .navigationBarItems(
+                    leading: Text("번뜩")
+                        .font(Font.customTitle())
+                        .foregroundColor(.white)
+                        .bold(),
+                    trailing: NavigationLink(destination: SettingView(fontSizeValue: $fontSizeValue, lineSpacingValue: $lineSpacingValue, charcaterSpacingValue: $charcaterSpacingValue, bgColor: $bgColor, fontColor: $fontColor), label: {
+                        Image(systemName: "gearshape.fill")
+                            .foregroundColor(.white)
+                    })
+                )
+                VStack {
+                    Spacer()
                     bottomContainerView
-                        .background(.ultraThinMaterial)
-                        .presentationDetents([.medium, .fraction(0.25)])
-                        .presentationDragIndicator(.visible)
-                        .interactiveDismissDisabled()
+                        .background(bgColor)
+                        .frame(height: 300)
                         .onAppear {
                             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                                   let controller = windowScene.windows.first?.rootViewController?.presentedViewController else {
@@ -54,35 +70,7 @@ struct ContentView: View {
                             controller.view.backgroundColor = .clear
                         }
                 }
-                .onChange(of: vm.scanType) { _ in vm.recognizedItems = [] }
-                .onChange(of: vm.textContentType) { _ in vm.recognizedItems = [] }
-                .onChange(of: vm.recognizesMultipleItems) { _ in vm.recognizedItems = []}
-                .navigationBarItems(
-                    leading: Text("번뜩")
-                        .font(Font.customTitle())
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .bold(),
-                    trailing: Button(action: {
-                        self.showScannerSheet = true
-                    }, label: {
-                        Image(systemName: "gearshape.circle.fill")
-                            .font(.title)
-                            .foregroundColor(.white)
-                    })
-                    .sheet(isPresented: $showScannerSheet, content: {
-                        bottomContainerView
-                    })
-                )
             }
-        }
-        .onAppear() {
-            for family: String in UIFont.familyNames {
-                            print(family)
-                            for names : String in UIFont.fontNames(forFamilyName: family){
-                                print("=== \(names)")
-                            }
-                        }
         }
     }
     
@@ -95,8 +83,10 @@ struct ContentView: View {
                             
                         case .text(let text):
                             Text(text.transcript)
-                                .foregroundColor(.black)
-                                .font(Font.customTitle())
+                                .foregroundColor(fontColor)
+                                .font(.custom("BM HANNA Pro", size: fontSizeValue))
+                                .kerning(charcaterSpacingValue)
+                                .lineSpacing(lineSpacingValue)
                             
                         @unknown default:
                             Text("Unknown")

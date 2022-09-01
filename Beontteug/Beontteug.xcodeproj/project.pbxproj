@@ -17,6 +17,8 @@
 		B22A1D6328C0A1950017451B /* BMHANNA_11yrs_ttf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B22A1D6228C0A1950017451B /* BMHANNA_11yrs_ttf.ttf */; };
 		B22A1D6A28C0A2C50017451B /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22A1D6928C0A2C50017451B /* FontExtension.swift */; };
 		B22A1D6C28C0A4170017451B /* BMHANNAPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B22A1D6B28C0A4170017451B /* BMHANNAPro.ttf */; };
+		B22A1D6E28C0F0B60017451B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22A1D6D28C0F0B60017451B /* SettingView.swift */; };
+		B22A1D7028C0F3D60017451B /* SelectFontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22A1D6F28C0F3D60017451B /* SelectFontView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		B22A1D6728C0A1D30017451B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B22A1D6928C0A2C50017451B /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		B22A1D6B28C0A4170017451B /* BMHANNAPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNAPro.ttf; sourceTree = "<group>"; };
+		B22A1D6D28C0F0B60017451B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		B22A1D6F28C0F3D60017451B /* SelectFontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFontView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				B22A1D5828C094E70017451B /* AppViewModel.swift */,
 				B22A1D5A28C0950B0017451B /* DataScanner.swift */,
 				B22A1D4C28C094A50017451B /* ContentView.swift */,
+				B22A1D6D28C0F0B60017451B /* SettingView.swift */,
+				B22A1D6F28C0F3D60017451B /* SelectFontView.swift */,
 				B22A1D6828C0A2990017451B /* Extensions */,
 				B22A1D6028C099970017451B /* InfoPlist.strings */,
 				B22A1D4E28C094A60017451B /* Assets.xcassets */,
@@ -178,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22A1D7028C0F3D60017451B /* SelectFontView.swift in Sources */,
 				B22A1D6A28C0A2C50017451B /* FontExtension.swift in Sources */,
 				B22A1D5B28C0950B0017451B /* DataScanner.swift in Sources */,
 				B22A1D4D28C094A50017451B /* ContentView.swift in Sources */,
+				B22A1D6E28C0F0B60017451B /* SettingView.swift in Sources */,
 				B22A1D4B28C094A50017451B /* BeontteugApp.swift in Sources */,
 				B22A1D5928C094E70017451B /* AppViewModel.swift in Sources */,
 			);
