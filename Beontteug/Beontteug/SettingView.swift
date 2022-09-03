@@ -15,6 +15,7 @@ struct SettingView: View {
     @Binding var charcaterSpacingValue: Double
     @Binding var bgColor: Color
     @Binding var fontColor: Color
+    @Binding var fontStyle: String
     
     var body: some View {
         VStack {
@@ -29,7 +30,7 @@ struct SettingView: View {
                     .multilineTextAlignment(.center)
                     .frame(width: 340, height: 180)
                     .foregroundColor(fontColor)
-                    .font(.custom("BM HANNA Pro", size: fontSizeValue))
+                    .font(.custom("\(fontStyle)", size: fontSizeValue))
                     .kerning(charcaterSpacingValue)
                     .lineSpacing(lineSpacingValue)
             }
@@ -37,7 +38,7 @@ struct SettingView: View {
                 Text("폰트")
                     .bold()
                 Spacer()
-                Text("배민 한나체 PRO")
+                Text("\(fontStyle)")
                 Button(action: {
                     self.showFontSheet = true
                 }, label: { Image(systemName: "chevron.right")
@@ -46,7 +47,7 @@ struct SettingView: View {
             }
             .padding(EdgeInsets(top: 40, leading: 20, bottom: 30, trailing: 20))
             .sheet(isPresented: $showFontSheet, content: {
-                SelectFontView()
+                SelectFontView(fontStyle: $fontStyle)
             })
             HStack {
                 Text("글자 크기")

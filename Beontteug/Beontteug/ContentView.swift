@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var charcaterSpacingValue: Double = 0
     @State private var bgColor = Color.yellow
     @State private var fontColor = Color.black
+    @State private var fontStyle: String = "BM HANNA Pro"
     
     private let textContentTypes: [(title: String, textContentType: DataScannerViewController.TextContentType?)] = []
     
@@ -52,7 +53,7 @@ struct ContentView: View {
                         .font(Font.customTitle())
                         .foregroundColor(.white)
                         .bold(),
-                    trailing: NavigationLink(destination: SettingView(fontSizeValue: $fontSizeValue, lineSpacingValue: $lineSpacingValue, charcaterSpacingValue: $charcaterSpacingValue, bgColor: $bgColor, fontColor: $fontColor), label: {
+                    trailing: NavigationLink(destination: SettingView(fontSizeValue: $fontSizeValue, lineSpacingValue: $lineSpacingValue, charcaterSpacingValue: $charcaterSpacingValue, bgColor: $bgColor, fontColor: $fontColor, fontStyle: $fontStyle), label: {
                         Image(systemName: "gearshape.fill")
                             .foregroundColor(.white)
                     })
@@ -72,6 +73,14 @@ struct ContentView: View {
                 }
             }
         }
+        .onAppear() {
+            for family: String in UIFont.familyNames {
+                            print(family)
+                            for names : String in UIFont.fontNames(forFamilyName: family){
+                                print("=== \(names)")
+                            }
+                        }
+        }
     }
     
     private var bottomContainerView: some View {
@@ -84,7 +93,7 @@ struct ContentView: View {
                         case .text(let text):
                             Text(text.transcript)
                                 .foregroundColor(fontColor)
-                                .font(.custom("BM HANNA Pro", size: fontSizeValue))
+                                .font(.custom("\(fontStyle)", size: fontSizeValue))
                                 .kerning(charcaterSpacingValue)
                                 .lineSpacing(lineSpacingValue)
                             

@@ -5,6 +5,12 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>BMHANNAPro.ttf</string>
+		<string>BMDOHYEON_otf.otf</string>
+		<string>BMJUA_otf.otf</string>
+		<string>Pretendard-Medium.otf</string>
+		<string>YdestreetL.otf</string>
+		<string>UTOIMAGE_유토이미지고딕_R_OTF.otf</string>
+		<string>NotoSansCJKkr-Regular.otf</string>
 	</array>
 </dict>
 </plist>
