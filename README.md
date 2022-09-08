@@ -1,6 +1,6 @@
 # 번뜩 Beontteug
 An app that helps people suffering from dyslexia to read more easily in the real world by improving their reading environment.
-![번뜩 프로필](https://user-images.githubusercontent.com/98628614/189168448-4d7328ea-776b-47f4-80ee-e8ccd30e0976.png)
+<img width="1512" alt="image" src="https://user-images.githubusercontent.com/98628614/189174156-85bdbefc-d2f1-4fcd-a8ec-046f9a20c932.png">
 
 ## 👀 Dyslexia
 More than 700 million children and adults worldwide are suffering from dyslexia.
