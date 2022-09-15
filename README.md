@@ -18,4 +18,4 @@ So this app used VisionKit to receive live text and customize it.
 
 ### 2) Customize texts that you can read more easily
   - There is no universal setting for better readability. So the app users can change the typography at the default setting quickly and often.
-<img width="1512" alt="번뜩 이미지1" src="https://user-images.githubusercontent.com/98628614/189173507-557ef107-ff9f-4958-ab0d-3e6fd94639db.png">
+<img width="1512" alt="image" src="https://user-images.githubusercontent.com/98628614/190477475-fef9463b-18a4-4802-986b-e20d5de10e08.png">
