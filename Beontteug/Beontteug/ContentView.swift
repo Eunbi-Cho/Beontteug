@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var bgColor = Color.yellow
     @State private var fontColor = Color.black
     @State private var fontStyle: String = "BM HANNA Pro"
+    @State var isToggled: [Bool] = [false]
     
     private let textContentTypes: [(title: String, textContentType: DataScannerViewController.TextContentType?)] = []
     
@@ -53,7 +54,7 @@ struct ContentView: View {
                         .font(Font.customTitle())
                         .foregroundColor(.white)
                         .bold(),
-                    trailing: NavigationLink(destination: SettingView(fontSizeValue: $fontSizeValue, lineSpacingValue: $lineSpacingValue, charcaterSpacingValue: $charcaterSpacingValue, bgColor: $bgColor, fontColor: $fontColor, fontStyle: $fontStyle), label: {
+                    trailing: NavigationLink(destination: SettingView(fontSizeValue: $fontSizeValue, lineSpacingValue: $lineSpacingValue, charcaterSpacingValue: $charcaterSpacingValue, bgColor: $bgColor, fontColor: $fontColor, fontStyle: $fontStyle, isToggled: $isToggled), label: {
                         Image(systemName: "gearshape.fill")
                             .foregroundColor(.white)
                     })

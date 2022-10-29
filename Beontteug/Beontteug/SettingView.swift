@@ -16,6 +16,7 @@ struct SettingView: View {
     @Binding var bgColor: Color
     @Binding var fontColor: Color
     @Binding var fontStyle: String
+    @Binding var isToggled: [Bool]
     
     var body: some View {
         VStack {
@@ -47,7 +48,7 @@ struct SettingView: View {
             }
             .padding(EdgeInsets(top: 40, leading: 20, bottom: 30, trailing: 20))
             .sheet(isPresented: $showFontSheet, content: {
-                SelectFontView(fontStyle: $fontStyle)
+                SelectFontView(fontStyle: $fontStyle, isToggled: $isToggled)
             })
             HStack {
                 Text("글자 크기")

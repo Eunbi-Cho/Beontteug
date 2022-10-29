@@ -8,82 +8,39 @@
 import SwiftUI
 
 struct SelectFontView: View {
+    
+    @State private var fonts = [
+        FontList(fontName: "기본 서체", fontStyle: ""),
+        FontList(fontName: "배민 한나체", fontStyle: "BM HANNA Pro"),
+        FontList(fontName: "배민 도현", fontStyle: "BM DoHyeon OTF"),
+        FontList(fontName: "배민 주아", fontStyle: "BM JUA_OTF"),
+        FontList(fontName: "프리텐다드", fontStyle: "Pretendard"),
+        FontList(fontName: "Yde 스트리트 서체", fontStyle: "Yde street")
+    ]
+    
     @State private var multiSelection = Set<UUID>()
     @Binding var fontStyle: String
-    let isSelected: Bool = fontStyle? ==
+    @Binding var isToggled: [Bool]
     
     var body: some View {
         List(selection: $multiSelection) {
-            Section(header: Text("폰트"), content: {
-                HStack {
-                    Text("기본 서체")
-                        .font(.custom("", size: 24))
-                    Spacer()
-                    Button(action: {
-                        fontStyle = ""
-                    }, label: {
-                        Image(systemName: "circle")
-                            .font(.title2)
-                    })
+            ForEach(fonts.indices, id: \.self) { idx in
+                    HStack {
+                        Text(fonts[idx].fontName)
+                            .font(.custom(fonts[idx].fontStyle, size: 24))
+                            .frame(height: 40)
+                        Spacer()
+                        Button(action: {
+                            fontStyle = fonts[idx].fontStyle
+                        }, label: {
+                            Image(systemName: fontStyle == fonts[idx].fontStyle ? "checkmark.circle.fill" : "circle")
+                                .font(.title2)
+                        })
+                    }
                 }
-                HStack {
-                    Text("배민 한나체 PRO")
-                        .font(.custom("BM HANNA Pro", size: 24))
-                    Spacer()
-                    Button(action: {
-                        fontStyle = "BM HANNA Pro"
-                    }, label: {
-                        Image(systemName: "checkmark.circle.fill")
-                            .font(.title2)
-                    })
-                }
-                HStack {
-                    Text("배민 도현")
-                        .font(.custom("BM DoHyeon OTF", size: 20))
-                    Spacer()
-                    Button(action: {
-                        fontStyle = "BM DoHyeon OTF"
-                    }, label: {
-                        Image(systemName: "circle")
-                            .font(.title2)
-                    })
-                }
-                HStack {
-                    Text("배민 주아")
-                        .font(.custom("BM JUA_OTF", size: 24))
-                    Spacer()
-                    Button(action: {
-                        fontStyle = "BM JUA_OTF"
-                    }, label: {
-                        Image(systemName: "circle")
-                            .font(.title2)
-                    })
-                }
-                HStack {
-                    Text("프리텐다드")
-                        .font(.custom("Pretendard", size: 24))
-                    Spacer()
-                    Button(action: {
-                        fontStyle = "Pretendard"
-                    }, label: {
-                        Image(systemName: "circle")
-                            .font(.title2)
-                    })
-                }
-                HStack {
-                    Text("Yde street 서체")
-                        .font(.custom("Yde street", size: 20))
-                    Spacer()
-                    Button(action: {
-                        fontStyle = "Yde street"
-                    }, label: {
-                        Image(systemName: "circle")
-                            .font(.title2)
-                    })
-                }
-            }
-            )}
+        }
         .listStyle(.plain)
+        .padding(.top, 20)
     }
 }
 
