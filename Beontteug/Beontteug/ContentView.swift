@@ -26,13 +26,13 @@ struct ContentView: View {
         case .scannerAvailable:
             mainView
         case .cameraNotAvailable:
-            Text("Your device doesn't have a camera")
+            Text("기기에 카메라가 없는 것 같아요 🥲")
         case .scannerNotAvailable:
-            Text("Your device doesn't have support for scanning barcode with this app")
+            Text("기기 버전을 iOS 16으로 업데이트해주세요 🙂")
         case .cameraAccessNotGranted:
-            Text("Please provide access to the camera in settings")
+            Text("카메라 접근 권한을 허용해주세요 📸")
         case .notDetermined:
-            Text("Requesting camera access")
+            Text("카메라 접근 권한을 허용하는 중입니다...")
         }
     }
     
