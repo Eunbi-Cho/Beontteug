@@ -25,6 +25,7 @@
 		B22A1D7828C132C60017451B /* YdestreetL.otf in Resources */ = {isa = PBXBuildFile; fileRef = B22A1D7728C132C60017451B /* YdestreetL.otf */; };
 		B22A1D7A28C132DE0017451B /* UTOIMAGE_유토이미지고딕_R_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = B22A1D7928C132DE0017451B /* UTOIMAGE_유토이미지고딕_R_OTF.otf */; };
 		B22A1D7C28C132F80017451B /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B22A1D7B28C132F80017451B /* NotoSansCJKkr-Regular.otf */; };
+		B23F924F290D83D700657556 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23F924E290D83D700657556 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		B22A1D7728C132C60017451B /* YdestreetL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = YdestreetL.otf; sourceTree = "<group>"; };
 		B22A1D7928C132DE0017451B /* UTOIMAGE_유토이미지고딕_R_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UTOIMAGE_유토이미지고딕_R_OTF.otf"; sourceTree = "<group>"; };
 		B22A1D7B28C132F80017451B /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		B23F924E290D83D700657556 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				B22A1D4C28C094A50017451B /* ContentView.swift */,
 				B22A1D6D28C0F0B60017451B /* SettingView.swift */,
 				B22A1D6F28C0F3D60017451B /* SelectFontView.swift */,
+				B23F924E290D83D700657556 /* DataModel.swift */,
 				B22A1D6828C0A2990017451B /* Extensions */,
 				B22A1D6028C099970017451B /* InfoPlist.strings */,
 				B22A1D4E28C094A60017451B /* Assets.xcassets */,
@@ -213,6 +216,7 @@
 				B22A1D5B28C0950B0017451B /* DataScanner.swift in Sources */,
 				B22A1D4D28C094A50017451B /* ContentView.swift in Sources */,
 				B22A1D6E28C0F0B60017451B /* SettingView.swift in Sources */,
+				B23F924F290D83D700657556 /* DataModel.swift in Sources */,
 				B22A1D4B28C094A50017451B /* BeontteugApp.swift in Sources */,
 				B22A1D5928C094E70017451B /* AppViewModel.swift in Sources */,
 			);
@@ -357,11 +361,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Beontteug/Preview Content\"";
-				DEVELOPMENT_TEAM = 8HXUXMV396;
+				DEVELOPMENT_TEAM = 276UBM28UR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Beontteug/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "텍스트 인식을 위해 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -372,11 +376,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.anna.Beontteug;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eunbi-cho.Beontteug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,11 +395,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Beontteug/Preview Content\"";
-				DEVELOPMENT_TEAM = 8HXUXMV396;
+				DEVELOPMENT_TEAM = 276UBM28UR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Beontteug/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "텍스트 인식을 위해 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -403,11 +410,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.anna.Beontteug;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eunbi-cho.Beontteug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
